@@ -1,0 +1,55 @@
+identity:
+  author: "gu"
+  name: "gmail"
+  label:
+    en_US: "Gmail"
+    zh_Hans: "Gmail"
+    pt_BR: "Gmail"
+  description:
+    en_US: "Connect Gmail inbox in Dify with OAuth authentication"
+    zh_Hans: "通过OAuth认证连接Gmail收件箱到Dify"
+    pt_BR: "Conecte a caixa de entrada do Gmail no Dify com autenticação OAuth"
+  icon: "icon.svg"
+  tags:
+    - productivity
+    - utilities
+oauth_schema:
+  client_schema:
+    - name: "client_id"
+      type: "secret-input"
+      required: true
+      url: "https://console.cloud.google.com/apis/credentials"
+      label:
+        zh_Hans: "Google客户端ID"
+        en_US: "Google Client ID"
+        pt_BR: "ID do Cliente Google"
+      placeholder:
+        zh_Hans: "请输入Google客户端ID"
+        en_US: "Please input your Google Client ID"
+        pt_BR: "Insira seu ID de cliente do Google"
+    - name: "client_secret"
+      type: "secret-input"
+      required: true
+      url: "https://console.cloud.google.com/apis/credentials"
+      label:
+        zh_Hans: "Google客户端密钥"
+        en_US: "Google Client Secret"
+        pt_BR: "Segredo do Cliente Google"
+  credentials_schema:
+    - name: "access_token"
+      type: "secret-input"
+      label:
+        zh_Hans: "访问令牌"
+        en_US: "Access Token"
+        pt_BR: "Token de Acesso"
+    - name: "refresh_token"
+      type: "secret-input"
+      label:
+        zh_Hans: "刷新令牌"
+        en_US: "Refresh Token"
+        pt_BR: "Token de Atualização"
+tools:
+  - tools/gmail.yaml
+extra:
+  python:
+    source: provider/gmail.py

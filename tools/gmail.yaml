@@ -1,0 +1,59 @@
+identity:
+  name: "read_emails"
+  author: "gu"
+  label:
+    en_US: "Read Gmail Emails"
+    zh_Hans: "读取Gmail邮件"
+    pt_BR: "Ler E-mails do Gmail"
+description:
+  human:
+    en_US: "Search and read emails from Gmail inbox using Gmail filters"
+    zh_Hans: "使用各种过滤器搜索和读取 Gmail 收件箱中的邮件"
+    pt_BR: "Pesquisar e ler e-mails da caixa de entrada do Gmail usando vários filtros"
+  llm: "Search and read emails from Gmail inbox. Supports Gmail search syntax including from:, to:, subject:, is:unread, has:attachment, after:, before:, and label: filters."
+parameters:
+  - name: query
+    type: string
+    required: false
+    default: "is:unread"
+    label:
+      en_US: Search Query
+      zh_Hans: 搜索查询
+      pt_BR: Consulta de Pesquisa
+    human_description:
+      en_US: "Gmail search query using Gmail search syntax (e.g., 'from:example@gmail.com', 'is:unread', 'has:attachment')"
+      zh_Hans: "使用Gmail搜索语法的Gmail搜索查询（例如：'from:example@gmail.com'、'is:unread'、'has:attachment'）"
+      pt_BR: "Consulta de pesquisa do Gmail usando sintaxe de pesquisa do Gmail (ex: 'from:example@gmail.com', 'is:unread', 'has:attachment')"
+    llm_description: "Gmail search query string. Use Gmail search operators like 'from:', 'to:', 'subject:', 'is:unread', 'has:attachment', 'after:2024/01/01', 'before:2024/12/31', 'label:inbox'. Leave empty to get recent emails."
+    form: llm
+  - name: max_results
+    type: number
+    required: false
+    default: 10
+    label:
+      en_US: Maximum Results
+      zh_Hans: 最大结果数
+      pt_BR: Resultados Máximos
+    human_description:
+      en_US: "Maximum number of emails to retrieve (1-50)"
+      zh_Hans: "要检索的最大邮件数量（1-50）"
+      pt_BR: "Número máximo de e-mails a recuperar (1-50)"
+    llm_description: "Maximum number of emails to return (between 1 and 50, default is 10)"
+    form: llm
+  - name: include_body
+    type: boolean
+    required: false
+    default: true
+    label:
+      en_US: Include Email Body
+      zh_Hans: 包含邮件正文
+      pt_BR: Incluir Corpo do E-mail
+    human_description:
+      en_US: "Whether to include the full email body content in the results"
+      zh_Hans: "是否在结果中包含完整的邮件正文内容"
+      pt_BR: "Se deve incluir o conteúdo completo do corpo do e-mail nos resultados"
+    llm_description: "Set to true to include full email body content, false to include only headers and metadata"
+    form: llm
+extra:
+  python:
+    source: tools/gmail.py
