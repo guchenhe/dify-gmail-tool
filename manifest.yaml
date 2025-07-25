@@ -3,10 +3,10 @@ type: plugin
 author: gu
 name: gmail
 label:
-  en_US: gmail
-  ja_JP: gmail
-  zh_Hans: gmail
-  pt_BR: gmail
+  en_US: Gmail
+  ja_JP: Gmail
+  zh_Hans: Gmail
+  pt_BR: Gmail
 description:
   en_US: Connect Gmail inbox in Dify
   ja_JP: Connect Gmail inbox in Dify

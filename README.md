@@ -1,4 +1,6 @@
-Retrieves Email from your Gmail inbox matching filter criteria. To configure OAuth Client:
+Retrieves Email from your Gmail inbox matching filter criteria. Source code available [here](https://github.com/guchenhe/dify-gmail-tool).
+
+To configure OAuth Client:
 
 ### 1. Create a new project in Google Cloud Console
 
